@@ -15,3 +15,9 @@ class InvalidMethodError(PyStackError):
     Raised when an invalid request method is provided
     """
     pass
+
+class InvalidDataError(PyStackError):
+    """
+    Raised when an invalid input is recognised
+    """
+    pass
