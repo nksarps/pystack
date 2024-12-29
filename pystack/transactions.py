@@ -15,7 +15,6 @@ class Transaction(Base):
             "amount":str(amount)
         }
 
-        # Add metadata is provided
         if metadata:
             data['metadata'] = metadata
 
