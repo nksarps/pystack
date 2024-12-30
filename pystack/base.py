@@ -30,7 +30,7 @@ class Base(object):
         if not request:
             raise InvalidMethodError(f"Request method '{method}' not recognised")
         
-        url = f'{self.BASE_URL}/{endpoint}'
+        url = f'{self.BASE_URL}{endpoint}'
         try:
             response = request(url, headers=self.headers(), json=data, params=params)
             response.raise_for_status()
