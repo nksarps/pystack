@@ -7,20 +7,15 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.test_key = config('TEST_KEY')
         self.customer = Customer(self.test_key)
-        self.base_url = 'https://api.paystack.co'
-        self.expected_headers = {
-            'Authorization': f'Bearer {self.test_key}',
-            'Content-Type': 'application/json'
-        }
+
 
     def test_create_customer(self):
         email = 'mail@example.com'
         first_name = 'Jane'
         last_name = 'Doe'
-        phone = '08012345678'
 
 
-        response = self.customer.create_customer(email, first_name, last_name, phone)
+        response = self.customer.create_customer(email=email, first_name=first_name, last_name=last_name)
 
         data = {
             'email': 'mail@example.com',    
@@ -87,7 +82,7 @@ class TestCustomer(unittest.TestCase):
             'last_name': 'Doe',
             'identification_type': 'BVN',
             'value': '12345678901',
-            'country': 'NG',
+            'country': 'GH',
             'bvn': '12345678901',
             'bank_code': '044',
             'account_number': '1234567890'
